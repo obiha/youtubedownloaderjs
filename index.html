@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+          <!-- Required meta tags -->
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+          <!-- Bootstrap CSS -->
+          <link rel="stylesheet" type="text/css"
+                    href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+
+          <title>YouTube Downloader</title>
+</head>
+
+<body>
+          <div
+                    style="margin-top: 5em; align-content: center; text-align: center;justify-content: center; align-self: center;">
+                    <h1 class="display-1">YouTube Downloader</h1>
+                    <div class="d-flex justify-content-center">
+                              <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default">Link</span>
+                              </div>
+                              <input id="urlinput" type="text" aria-label="Sizing example input" style="width: 30em;">
+                              <button id="convertButton" type="button" class="btn btn-primary" style="">FETCH</button>
+
+
+                    </div>
+
+
+                    <div id="linkdetails" style="margin-top:2em">
+
+                    </div>
+
+                    <div style="margin-top: 2em;">
+
+                              <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                        <option selected>.MP4</option>
+                                        <option value="1">.MP3</option>
+                                        <option value="2">.AVI</option>
+                              </select>
+
+                              <button id="downloadButton" type="button" class="btn btn-success">DOWNLOAD</button>
+                    </div>
+             
+          </div>
+
+
+          <script>
+                    console.log("hello world")
+                              let convertButton = document.getElementById("convertButton");
+
+                              let URLinput = document.getElementById("urlinput");
+
+                              convertButton.addEventListener("click", () => {
+                                        checkvideoExists(URLinput.value);
+                              })
+
+                              function checkvideoExists(URL) {
+
+                                        let returned = "";
+                                        if (URL.includes("=")) {
+                                                  returned = (URL.split("/")[3]).split("=")[1];
+
+                                        } else {
+                                                  returned = (URL.split("/")[3])
+
+                                        }
+                                        // console.log(returned)
+                                        // console.log(`https://img/youtube.com/vi/${returned}/maxresdefault.jpg`);
+                                        document.getElementById("linkdetails").innerHTML = "<img src=https://img.youtube.com/vi/" + returned + "/hqdefault.jpg>"
+                              }
+
+                    // convertButton.addEventListener("click", () => {
+                    //           console.log(`URL: ${URLinput.value}`);
+                    //           sendURL(URLinput.value);
+                    // })
+
+
+                    // function sendURL(URL) {
+                    //           window.location.href = `http://localhost:3000/download?URL=${URL}`
+                    // }
+          </script>
+
+</body>
+
+
+</html>
