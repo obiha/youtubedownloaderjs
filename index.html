@@ -22,7 +22,7 @@
                                         <span class="input-group-text" id="inputGroup-sizing-default">Link</span>
                               </div>
                               <input id="urlinput" type="text" aria-label="Sizing example input" style="width: 30em;">
-                              <button id="convertButton" type="button" class="btn btn-primary" style="">FETCH</button>
+                              <button id="convertButton" type="button" class="btn btn-primary">FETCH</button>
 
 
                     </div>
@@ -35,8 +35,8 @@
                     <div style="margin-top: 2em;">
 
                               <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                                        <option selected>.MP4</option>
-                                        <option value="1">.MP3</option>
+                                        <option selected>.MP3</option>
+                                        <option value="1">.MP4</option>
                                         <option value="2">.AVI</option>
                               </select>
 
@@ -71,15 +71,15 @@
                                         document.getElementById("linkdetails").innerHTML = "<img src=https://img.youtube.com/vi/" + returned + "/hqdefault.jpg>"
                               }
 
-                    // convertButton.addEventListener("click", () => {
-                    //           console.log(`URL: ${URLinput.value}`);
-                    //           sendURL(URLinput.value);
-                    // })
+                    convertButton.addEventListener("click", () => {
+                              console.log(`URL: ${URLinput.value}`);
+                              sendURL(URLinput.value);
+                    })
 
 
-                    // function sendURL(URL) {
-                    //           window.location.href = `http://localhost:3000/download?URL=${URL}`
-                    // }
+                    function sendURL(URL) {
+                              window.location.href = `http://localhost:3000/download?URL=${URL}`
+                    }
           </script>
 
 </body>

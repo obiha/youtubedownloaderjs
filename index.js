@@ -34,9 +34,9 @@ app.get("/download", (req, res) => {
           } )
 
 
-          //IMPORTANT
-          // res.header('Content-Disposition', 'attachment; filename=video.mp4');
-          // ytdl(URL, {
-          //           format: 'mp4'
-          // }).pipe(res);
+        //   IMPORTANT
+          res.header('Content-Disposition', 'attachment; filename=video.mp4');
+          ytdl(URL, {
+                    format: 'mp4'
+          }).pipe(res);
 });
